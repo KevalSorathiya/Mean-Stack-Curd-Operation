@@ -1,0 +1,22 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <div class="card rounded-0 bg-info align-items-center">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="card-header mb-1 ml-2" height="170px" width="150px" [src]="(imageUrl + student[0]._id)" alt="{{student[0].name}}">
+                    </div>
+                    <h4 class="card-title text-center">{{student[0].name}}</h4>
+                    <p class="card-text text-center">{{student[0].enrollnment_no}}</p>
+                    <p class="card-text text-center">{{student[0].email}}</p>
+                    <p class="card-text text-center">{{student[0].password}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+
+</div>

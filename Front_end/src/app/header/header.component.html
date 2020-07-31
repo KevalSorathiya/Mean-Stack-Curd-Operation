@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="./Home">17SOECE11077</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active current" routerLink="/Home" onclick="$('.navbar-collapse').collapse('hide');">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active current" routerLink="/Student" onclick="$('.navbar-collapse').collapse('hide');">Student</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!stud.loggedIn()" routerLinkActive="active current" routerLink="/Login" onclick="$('.navbar-collapse').collapse('hide');">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!stud.loggedIn()" routerLinkActive="active current" routerLink="/Signup" onclick="$('.navbar-collapse').collapse('hide');">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer;" *ngIf="stud.loggedIn()" routerLinkActive="active current" onclick="$('.navbar-collapse').collapse('hide');" (click)="stud.logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

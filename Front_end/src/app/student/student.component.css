@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+}
+
+.card-img-top {
+    height: 100px;
+    width: 100px;
+}
+
+.card-header {
+    align-items: center;
+}
+
+.card-title {
+    padding-top: 100px;
+}

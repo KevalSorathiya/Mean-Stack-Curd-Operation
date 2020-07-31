@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" *ngFor="let s of student[0]">
+            <div class="shadow card card-hover mb-5 rounded-0 align-items-center">
+                <div class="card-body">
+                    <h3 class="card-title text-center"> Your Details</h3>
+                    <div class="text-center">
+                        <img class="card-header" height="170px" width="150px" [src]="(imageUrl + s._id)" alt="{{s.name}}">
+                    </div>
+                    <p class="pt-2">Name : {{s.name | uppercase}}</p>
+                    <p class="card-text">Enrollnment_no : {{s.enrollnment_no}}</p>
+                    <p class="card-text">Password : {{s.password}}</p>
+                    <p class="card-text">Email : {{s.email | titlecase}} </p>
+                    <div class="row justify-content-center">
+                        <a type="button" class="btn btn-dark text-white" (click)="onLogin()">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

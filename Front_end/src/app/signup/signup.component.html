@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="mt-2">
+        <p class="text-center h2">Registration</p>
+    </div>
+    <!-- <h1>{{this.student[0].name}}</h1> -->
+    <form #register="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="form-label">Name:</label>
+            <input type="text" class="form-control" minlength="3" id="name" name="name" placeholder="Enter Name" required [(ngModel)]="studmodel.name" #name="ngModel">
+            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                Username is required (minimum 3 characters).
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required [(ngModel)]="studmodel.email" #email="ngModel" />
+            <div class="alert-danger alert" [hidden]="name.valid || name.pristine">
+                Email is required and format should be <i>john@doe.com</i>.
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Password:</label>
+            <input type="password" class="form-control" minlength="6" id="password" name="password" minlength="6" placeholder="Enter Password" required [(ngModel)]=studmodel.password #password="ngModel" />
+            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                Password is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Re-type Password:</label>
+            <input type="password" class="form-control" id="r_password" minlength="6" name="r_password" placeholder="Enter Re-Password" required [(ngModel)]=studmodel.r_password #r_password="ngModel" />
+            <div class="alert-danger alert" [hidden]="name.valid || name.pristine">
+                Re-Password is required
+            </div>
+            <div class="alert alert-danger" *ngIf="isEqual == true">
+                password and re-password is must be same.
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Enrollnment no:</label>
+            <input type="text" class="form-control" id="enrollnment_no" minlength="12" name="enrollnment_no" placeholder="Enter Enrollnment no" required [(ngModel)]="studmodel.enrollnment_no" #enrollnment_no="ngModel">
+            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                Enrollnment number is required (minimum 12 characters)
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label class="form-label">Upload a Photo:</label>
+                <input type="file" name="file" class="form-control" id="file" (change)="onFileSelected($event)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="alert alert-danger" *ngIf="isNull == true">
+                please fill all the fields
+            </div>
+            <button type="submit" class="btn  btn-dark " [disabled]="!btnDisable">Register</button>
+            <button type="button" class="btn  btn-success ml-2" (click)="onUpdate()" [disabled]="btnDisable">Update</button>
+        </div>
+    </form>
+    <!-- <h1>{{name.className}}</h1> -->
+</div>
